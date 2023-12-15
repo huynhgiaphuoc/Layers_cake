@@ -1,0 +1,95 @@
+﻿@model List<WebApplication2.Models.Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+
+    <style>
+        .thanhnut {
+            display: flex;
+            margin-top: 5px;
+        }
+
+        table.table thead tr th {
+            background-color: #fbd5d5;
+        }
+    </style>
+}
+<div>
+    <div id="displayep">
+        <div class="thanhnut">
+            <form class="d-flex flex-row align-items-center flex-wrap" action="/admin/Order/index">
+                <label for="search" class="mx-2 my-1">Search</label>
+                <input type="search"
+                       class="from-control w-auto"
+                       id="search"
+                       name="search"
+                       value="@ViewBag.Search"
+                       placeholder="search" />
+                <button type="submit" class="btn btn-primary mx-2">GO</button>
+
+            </form>
+        </div>
+        <div style="margin-top: 30px">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order Date</th>
+                        <th>Customer Name</th>
+                        <th>Image</th>
+                        <th>Address</th>
+                        <th>Edit</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+
+
+                        <tr style="height:100px">
+                            <td>@item.Orderdate</td>
+                            <td>@item.Cus_Name</td>
+                            <td>@item.Phone</td>
+                            <td>
+                                @item.Address
+                            </td>
+                           
+
+                            <td>
+                                <a class="btn btn-secondary" href="/Admin/Order/EditOrder/@item.ID_order">Edit</a>
+                            </td>
+                            
+                        </tr>
+
+
+                    }
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const dark = document.body;
+    const change = document.querySelector('#switch-mode');
+    change.addEventListener('click', () => {
+        change.classList.toggle('bi-moon-stars-fill');
+        change.classList.toggle('bi-brightness-high-fill');
+        let mode = dark.classList.toggle('dark');
+        localStorage.setItem('darkmode', mode);
+    });
+
+    
+</script>
+
+
+
+
+

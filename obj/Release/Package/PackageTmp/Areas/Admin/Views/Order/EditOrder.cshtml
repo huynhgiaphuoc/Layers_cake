@@ -1,0 +1,47 @@
+﻿@model WebApplication2.Models.Order
+@{
+    ViewBag.Title = "EditCustomer";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+Ư
+
+<h2>Edit</h2>
+
+<form action="/Admin/Order/EditOrder/@Model.ID_order" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="ID_order" value="@Model.ID_order" />
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Product Name">Order</label>
+            <input type="text"
+                   class="form-control"
+                   id="ProductName"
+                   name="Cus_Name"
+                   placeholder="Customer Name"
+                   value="@Model.Cus_Name" />
+        </div>
+        <div class="col-md-6">
+            <label for="Price">Address</label>
+            <input type="text"
+                   class="form-control"
+                   id="Address"
+                   name="Address"
+                   placeholder="Price"
+                   value="@Model.Address" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Birthday</label>
+            <input type="text"
+                   class="form-control"
+                   name="Phone"
+                   placeholder="DateofPurchase"
+                   value="@Model.Phone" />
+        </div>
+
+
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/admin/order" class="btn btn-danger">Cancel</a>
+</form>
+
+
+

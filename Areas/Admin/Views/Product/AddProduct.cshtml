@@ -1,0 +1,78 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = null;
+    <link rel="stylesheet" href="~/Content/Css/Product.css" />
+}
+<div class="container-fluid editdeconproadd">
+    <h2 style="color: black">Add New Product</h2>
+
+    @using (Html.BeginForm("AddProduct","Product" ,FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_product_add">
+
+
+            <table class="table">
+                <tr>
+                    <th>Product Name:</th>
+                    <th><input type="text" class="form-control" name="Name" placeholder="Product Name" /></th>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <th><input type="file" class="form-control" name="ImageFile" placeholder="Image of Product" /></th>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <th><input type="number" class="form-control" name="Price" placeholder="Image of Product" /></th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th><input type="text" class="form-control" name="Des" placeholder="Image of Product" /></th>
+                </tr>
+                <tr>
+                    <th>Details</th>
+                    <th><input type="text" class="form-control" name="Details" placeholder="Image of Product" /></th>
+                </tr>
+                <tr>
+                    <th>Total Quantity</th>
+                    <th><input type="number" class="form-control" name="Total" placeholder="Image of Product" /></th>
+                </tr>
+                <tr>
+                    <th>Saled</th>
+                    <th><input type="number" class="form-control" name="Saled" placeholder="Image of Product" /></th>
+                </tr>
+
+                <tr>
+
+
+                    <th>Category</th>
+                    <th>
+                        <select class="form-control"
+                                id="CategoryID"
+                                name="ID_category">
+                            @foreach (var item in Model.Category)
+                            {
+                               <option value="@item.ID_category">@item.Category1</option>
+                            }
+                        </select>
+                    </th>
+
+
+                </tr>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        <input type="submit" class="btn btn-light" name="Add" />
+                    </th>
+                </tr>
+            </table>
+        </div>
+    }
+
+</div>
+
+

@@ -1,0 +1,18 @@
+﻿@model WebApplication2.Models.Customer
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+}
+<div style="text-align: center"></div>
+<form action="/Admin/Customer/Delete/@Model.ID_customer" method="post" style="display: inline-block;" class="form">
+    <input type="hidden" class="form-control" name="id" value="@Model.ID_customer" />
+    <table class="table">
+        <tr>
+            <th>Product</th>
+            <td>@Model.Name</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/Admin/Customer" class="btn btn-dark">Cancel</a>
+</form>
+

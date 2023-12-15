@@ -1,0 +1,110 @@
+﻿@model List<WebApplication2.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+
+    <style>
+      .thanhnut{
+          display: flex;
+          margin-top: 5px;
+      }
+      table.table thead tr th{
+          background-color: #fbd5d5;
+
+      }
+    </style>
+}
+<div>
+    <div id="displaypr">
+        <div class="thanhnut">
+            <form class="d-flex flex-row align-items-center flex-wrap" action="/admin/product/index">
+                <label for="search" class="mx-2 my-1">Search</label>
+                <input type="search"
+                       class="from-control w-auto"
+                       id="search"
+                       name="search"
+                       value="@ViewBag.Search"
+                       placeholder="search" />
+                <button type="submit" class="btn btn-primary mx-2">GO</button>
+
+            </form>
+            
+            <a id="addpr" class="btn btn-primary" style="margin-left: 10px">Add</a>
+        </div>
+        <div style="margin-top: 30px">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Details</th>
+                        <th>Total_quantity</th>
+                        <th>Saled</th>
+                        <th>ID_category</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+                        var path = "/Content/imglayers/banhman/";
+
+                        <tr style="height:100px">
+                            <td>@item.ID_product</td>
+                            <td>@item.Name</td>
+                            <td><img src="@path@item.Image" width="100px" height="100px" /></td>
+                            <td>@item.Price</td>
+                            <td>
+                                @item.Description
+                            </td>
+                            <td>
+                                @item.Details
+                            </td>
+                            <td>@item.Total_quantity</td>
+                            <td>@item.saled</td>
+                            <td>@item.ID_category</td>
+                            <td>
+                                <a class="btn btn-secondary" href="/Admin/Product/EditProduct/@item.ID_product">Edit</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary" href="/Admin/Product/Delete/@item.ID_product">Delete</a>
+                            </td>
+                        </tr>
+
+
+                    }
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const dark = document.body;
+    const change = document.querySelector('#switch-mode');
+    change.addEventListener('click', () => {
+        change.classList.toggle('bi-moon-stars-fill');
+        change.classList.toggle('bi-brightness-high-fill');
+        let mode = dark.classList.toggle('dark');
+        localStorage.setItem('darkmode', mode);
+    });
+
+    $("#addpr").click(function () {
+        $("#displaypr").load("AddProduct","Product");
+    });
+    </script>
+
+
+
+
+

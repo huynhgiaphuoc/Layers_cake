@@ -1,0 +1,73 @@
+﻿@model WebApplication2.Models.Cart
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" href="~/Content/Css/Product.css" />
+
+
+}
+<div style="margin-top: 120px;">
+
+
+    @if (Model != null)
+    {
+        <a href="@Url.Action("Index", "Product")" class="btn btn-dark">back</a>
+
+        <div id="payment">
+
+
+            <table class="table">
+                <thead>
+                <th>
+                    Product Name
+                </th>
+                <Th>Image</Th>
+                <th>Price</th>
+                <th>Quanlity</th>
+                <th>Total Money</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        decimal total = Convert.ToDecimal(item.products.Price.Value * item.quanlity);
+                        <tr>
+                            <td>@item.products.Name</td>
+                            <td><img src="@item.products.Image" width="100px" ; height="100px" /></td>
+                            <td>@item.products.Price</td>
+                            <td>
+                                @using (Html.BeginForm("Update_Quantity", "ShoppingCart"))
+                                {
+                                    <input type="hidden" value="@item.products.ID_product" name="ID_product" />
+                                    <div class="flexnhe">
+                                        <input type="number" value="@item.quanlity" class="form-control" style="width: 200px" name="Quantity" />
+                                        <input type="submit" value="Update" class="btn btn-primary" style="position: relative;left: 10px" />
+                                    </div>
+
+                                }
+
+                            </td>
+
+                            <td>Total : @total </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+
+
+
+            </table>
+
+            <p name="money" style="float: right;position: relative; right: 50px;margin-top: 50px">Total: @Model.Total_money()$</p><br />
+
+            <a id="btnpay" class="btn btn-warning" style="float: right; position: relative; left: 40px; margin-top: 50px">Payment</a>
+        </div>
+    }
+</div>
+<script>
+    $('#btnpay').click(function () {
+        $("#payment").load('/ShoppingCart/Payment');
+    });
+
+</script>
+

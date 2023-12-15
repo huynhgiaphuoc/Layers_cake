@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "AddCustomer";
+    Layout = null;
+    <link rel="stylesheet" href="~/Content/Css/Product.css" />
+}
+<div class="container-fluid editdeconproadd">
+    <h2 style="color: black">Add New Product</h2>
+
+    @using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_product_add">
+
+
+            <table class="table">
+                <tr>
+                    <th>Customer Name:</th>
+                    <th><input type="text" class="form-control" name="Name" placeholder="Product Name" /></th>
+                </tr>
+                <tr>
+                    <th>Address: </th>
+                    <th><input type="text" class="form-control" name="Address" placeholder="Address" /></th>
+                </tr>
+                <tr>
+                    <th>Birthday: </th>
+                    <th><input type="date" class="form-control" name="Birthday" placeholder="Birthday" /></th>
+                </tr>
+                <tr>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        <select class="form-control" name="Gender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+
+                        </select>
+                    </th>
+
+
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <th><input type="text" class="form-control" name="Phone" placeholder="Phone" /></th>
+                </tr>
+                <tr>
+                    <th>Gmail</th>
+                    <th><input type="email" class="form-control" name="Gmail" placeholder="Gmail" /></th>
+                </tr>
+                <tr>
+                    <th>Username:</th>
+                    <th><input type="text" class="form-control" name="Username" placeholder="Username" /></th>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <th><input type="password" class="form-control" name="Password" placeholder="Password" /></th>
+                </tr>
+             
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        <input type="submit" class="btn btn-light" name="Add" />
+                    </th>
+                </tr>
+            </table>
+        </div>
+    }
+
+</div>
+
+

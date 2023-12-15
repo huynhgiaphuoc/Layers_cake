@@ -1,0 +1,142 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Css/Home.css")" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Content/Image/Home/avt.png">
+    <link rel="stylesheet" href="~/Content/Css/Product.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Layers Cake</title>
+
+</head>
+<body>
+    <nav id="header">
+        <div class="header-menu line">
+            <a href="@Url.Action("Index","Home")"><img src="~/Content/imglayers/avt.png" class="header-logo"></a>
+            <ul id="nav">
+                <li><a class="margin-menu sub-menu" href=""> Home</a></li>
+                <li class="dropdown">
+                    <a>
+                        <button class="margin-menu sub-menu dropbtn">PRODUCT</button>
+                        <div class="dropdown-content z-3 ">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </a>
+                </li>
+                <li><a class="sub-menu" href="">Contact</a></li>
+                <li><a class="sub-menu" href="">About</a></li>
+            </ul>
+            @if (@Session["Username"] == null)
+            {
+                <div class="login">
+                    <a class="btn" href="@Url.Action("Register", "Account")">Sign in</a>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Login", "Account")">Sign up</a>
+                </div>
+            }
+            else
+            {
+      
+
+
+                       <a style="position: absolute;left: 1100px;z-index: 100;">Hello @Session["Name"]</a>
+
+                            <a href="@Url.Action("Logout", "Account")">Logout</a>
+
+            }
+        </div>
+    </nav>
+    <div class="container-fluid">
+        @RenderBody()
+        <hr />
+        @*<div id="content" class="mbot">
+                @RenderBody()
+            </div>*@
+    </div>
+    <footer id="footer" class="border-top footer text-muted">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <p class="footer-title">Layers Cake</p>
+                    <p class="footer-title-sm-phone">
+                        Phone: <a href="" class="footer-numberphone">+1234 4567 890</a>
+                    </p>
+                    <p class="footer-title-sm-email">
+                        Email: <a href=""
+                                  class="footer-email">layerscake@gmail.com</a>
+                    </p>
+                    <p class="footer-title-sm-add">Address: 1 Ly Tu Trong st, Can Tho City, VietNam</p>
+                </div>
+                <div class="col-lg-4">
+                    <p class="footer-title-about">Service</p>
+                    <p class="footer-title-about-sm-ab"><a href="contact.php" class="footer-ab">Salfty Cake</a></p>
+                    <p class="footer-title-about-sm-ab">
+                        <a href="policy.php" class="footer-ab">
+                            Sweetie Cake
+                        </a>
+                    </p>
+                    <p class="footer-title-about-sm-ab">
+                        <a href="policy.php" class="footer-ab">
+                            Cream Cake
+                        </a>
+                    </p>
+                    @*<p class="footer-title-about-sm-ab">
+                            <a href="policy.php" class="footer-ab">
+                                Sweetie Cake
+                            </a>
+                        </p>
+                        <p class="footer-title-about-sm-ab">
+                            <a href="policy.php" class="footer-ab">
+                                Salfty Cake
+                            </a>
+                        </p>*@
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="footer-copy">&copy; @DateTime.Now.Year Layers Cake Can Tho City, VietNam.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">*@
+    @*@RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>*@
+    @*</div>*@
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

@@ -1,0 +1,226 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" href="~/Content/Css/Product.css" />
+    <script src="~/Content/aos-master/dist/aos.js"></script>
+
+    <link href="~/Content/aos-master/dist/aos.css" rel="stylesheet">
+}
+<div class="container" style="border: 1px solid #ccc; border-radius: 10px;
+    border-radius: 10px;">
+
+</div>  
+<div class="container-fluid" data-aos="fade-up" data-aos-duration="1000" id="Category_1">
+
+    <div style="display: flex; align-items: center; justify-content: center;margin-top: 30px">
+        <div class="row">
+            @foreach (var item in Model.Product)
+            {<div class="col-sm-4" style="justify-content: center;justify-items: center;margin-top: 30px;">
+                    <a href="" class="itemproductde">
+
+
+                        <div class="itemproduct">
+                            <img src="@item.Image" class="imgproduct" />
+                            <p class="nameproduct">@item.Name</p>
+                            <p class="Priceproduct">@item.Price</p>
+                            <p class="totalproduct">Total : @item.Total_quantity cakes</p>
+                            <hr class="hr-1" />
+                            <div style="display: flex; position: relative; bottom: 45px;">
+
+                                <i class="fa-solid fa-cake-candles" style=" margin-left: 10px;"></i>@item.saled Cakes have saled
+                                <div class="start">
+                                    <i class="fa-solid fa-star" style="color: #fff82e;"></i>
+                                    <i class="fa-solid fa-star" style="color: #fff82e;"></i>
+                                    <i class="fa-solid fa-star" style="color: #fff82e;"></i>
+                                    <i class="fa-solid fa-star" style="color: #fff82e;"></i>
+                                    <i class="fa-solid fa-star" style="color: #fff82e;"></i>
+                                </div>
+                            </div>
+
+
+                            <hr class="hr-2" />
+
+                            <div class="decofooteritem">
+
+
+                                <div style="margin-left: 10px;">
+                                    <a href="/ShoppingCart/AddtoCart/@item.ID_product" class="btn btn-primary">Add To Cart</a>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                    </a>
+                </div>
+            }
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<div class="container-fluid">
+    <p class="texttrend">CAKE TRENDING</p>
+    <div class="alignpro">
+        <a href="" class="itemproductde">
+            <div class="itembannerpro">
+                <img src="~/Content/imglayers/banhtrending/COOKIEBOX1.jpg" data-aos="fade-up" style="height: 250px;width:250px;margin-top: 30px;" data-aos-duration="1000" class="hoverpro" />
+                <a href="" class="btn btn-primary editbtn">ADD TO CART</a>
+                <p>COOKIES CUTE</p>
+                <p>200.00</p>
+            </div>
+        </a>
+
+        <a href="" class="itemproductde">
+            <div class="itembannerpro">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" data-aos="fade-up" style="height: 250px;width:250px;margin-top: 30px;" data-aos-duration="1000" class="hoverpro" />
+                <a href="" class="btn btn-primary editbtn">ADD TO CART</a>
+                <p>COOKIES CUTE</p>
+                <p>200.00</p>
+            </div>
+        </a>
+        <a href="" class="itemproductde">
+            <div class="itembannerpro">
+                <img src="~/Content/imglayers/banhtrending/ROLLEDBUCHE.jpg" data-aos="fade-up" style="height: 250px;width:250px;margin-top: 30px;" data-aos-duration="1000" class="hoverpro" />
+                <a href="" class="btn btn-primary editbtn">ADD TO CART</a>
+                <p>COOKIES CUTE</p>
+                <p>200.00</p>
+            </div>
+        </a>
+        <a href="" class="itemproductde">
+            <div class="itembannerpro">
+                <img src="~/Content/imglayers/banhtrending/SNOWMAN_HALFCUT.jpg" data-aos="fade-up" style="height: 250px;width:250px;margin-top: 30px;" data-aos-duration="1000" class="hoverpro" />
+                <a href="" class="btn btn-primary editbtn">ADD TO CART</a>
+                <p>COOKIES CUTE</p>
+                <p>200.00</p>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+<div class="prioritizeproduct container-fluid" data-aos="fade-up" data-aos-duration="1000">
+    <p class="textprio">Priortize</p>
+    <swiper-container class="priorow mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3" space-between="30" free-mode="true">
+
+        <swiper-slide class="itempriopro swiper-slide" style="margin-left: 0px!important">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+        </swiper-slide>
+        <swiper-slide class="itempriopro">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+
+        </swiper-slide>
+        <swiper-slide class="itempriopro">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+
+        </swiper-slide>
+        <swiper-slide class="itempriopro">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+
+
+        </swiper-slide> <swiper-slide class="itempriopro">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+        </swiper-slide> <swiper-slide class="itempriopro">
+            <a href="" class="itemproductde">
+                <img src="~/Content/imglayers/banhngot/hinh1.jpg" />
+                <a href="" class="btn btn-primary editbtnprio" style="display: flex;left: 10px;">
+                    <i class="fas fa-cart-plus"></i>/
+                    <p style="text-decoration: line-through;">200.00</p>
+                    <p style="color: red">100.00</p>
+                </a>
+            </a>
+
+
+
+        </swiper-slide>
+    </swiper-container>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<div class="container" style="margin-top: 50px;">
+    <div class="decoadd" data-aos="fade-up" data-aos-duration="1000">
+        <div class="lettertp">
+            <h1>
+                THANK YOUR FOR YOUR VISITED
+            </h1>
+            <p>
+                Thanks again for taking the time to meet with me yesterday afternoon. I enjoyed our conversation about the Marketing Manager position and appreciated learning more about working with the marketing team.
+
+                It sounds like a rewarding role, especially given the opportunities for collaboration and advancement. I think my master's in marketing and marketing experience would make me an excellent candidate for the role.
+
+                I look forward to discussing this opportunity with you more. Please don't hesitate to contact me if you need additional information about my references.
+
+                Thank you,
+
+                Hannah Lee
+
+                hannah.lee@email.com
+
+                555-555-5555
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    AOS.init();
+</script>
+<script>
+    $('#btnpay').click(function () {
+        $("#payment").load('/ShoppingCart/Payment');
+    });
+
+</script>

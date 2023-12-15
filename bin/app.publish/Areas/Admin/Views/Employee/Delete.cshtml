@@ -1,0 +1,17 @@
+﻿@model WebApplication2.Models.Employee
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+}
+<form action="/Admin/Employee/Delete/@Model.ID_employee" method="post">
+    <input type="hidden" name="id" value="@Model.ID_employee" />
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <td>@Model.Name</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/Admin/Employee" class="btn btn-dark">Cancel</a>
+</form>
+

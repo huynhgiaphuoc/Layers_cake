@@ -1,0 +1,49 @@
+﻿#header {
+    height: 46px;
+}
+
+.menu {
+    text-align: center;
+}
+
+.nav > li:hover > a {
+    color: #f3dbe9;
+    background-color: #959bbd;
+}
+
+.nav li:hover .subnav {
+    display: block;
+}
+
+.subnav {
+    background-color: white;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 101;
+}
+
+    .subnav li {
+        background-color: white;
+    }
+
+.nav .subnav a {
+    color: black;
+}
+
+.subnav li a {
+    padding: 0 24px;
+    /* ngay chổ này nếu có làm menu con ngay hàng thẳng lối thì chingr ngay 20 px */
+}
+
+.subnav li:hover a {
+    color: #f3dbe9;
+    background-color: #959bbd;
+}
+
+.icon {
+    color: white;
+    background-color: white;
+}
+
+

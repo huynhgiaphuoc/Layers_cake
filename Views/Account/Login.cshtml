@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml"; 
+    <link rel="stylesheet" href="~/Content/Css/Account.css" />
+}
+
+
+<div class="backgroundlogin">
+
+    <div class="form-container" id="displaysignin">
+        <p class="title">Welcome back</p>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="text" class="input" placeholder="Username" name="username">
+            <input type="password" class="input" placeholder="Password" name="password">
+            <p class="page-link">
+                <span class="page-link-label">Forgot Password?</span>
+            </p>
+            <input type="submit" class="form-btn" name="Login">
+        }
+
+
+        <p class="sign-up-label">
+            Don't have an account?<a id="signin" class="sign-up-link">Sign up</a>
+        </p>
+
+    </div>
+
+   
+
+</div>
+<script>
+    $("#signin").click(function () {
+        $("#displaysignin").load("Register","Account");
+    });
+
+</script>
+

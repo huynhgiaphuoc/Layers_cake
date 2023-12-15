@@ -1,0 +1,117 @@
+﻿@model WebApplication2.Models.Product
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<h2>Edit</h2>
+
+<form action="/Admin/Product/EditProduct/@Model.ID_product" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="ID_product" value="@Model.ID_product" />
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Product Name">Product name</label>
+            <input type="text"
+                   class="form-control"
+                   id="ProductName"
+                   name="Name"
+                   placeholder="Product Name"
+                   value="@Model.Name" />
+        </div>
+        <div class="col-md-6">
+            <label for="Price">Price</label>
+            <input type="number"
+                   class="form-control"
+                   id="Price"
+                   name="Price"
+                   placeholder="Price"
+                   value="@Model.Price" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Description</label>
+            <input type="text"
+                   class="form-control"
+                   name="Description"
+                   placeholder="DateofPurchase"
+                   value="@Model.Description" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Details</label>
+            <input type="text"
+                   class="form-control"
+                   name="Details"
+                   placeholder="DateofPurchase"
+                   value="@Model.Details" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Total</label>
+            <input type="number"
+                   class="form-control"
+                   id="DateofPurchase"
+                   name="Total_quantity"
+                   placeholder="DateofPurchase"
+                   value="@Model.Total_quantity" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Saled</label>
+            <input type="number"
+                   class="form-control"
+                  
+                   name="saled"
+                  
+                   value="@Model.saled" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Category :</label>
+            <input type="number"
+                   class="form-control"
+                   id="DateofPurchase"
+                
+                   name="ID_category"
+                   placeholder="DateofPurchase"
+                   value="@Model.ID_category" />
+        </div>
+        <div class="col-md-6">
+
+            <label for="DateofPurchase">Image</label>      
+           
+            <input type="file"  id="imageFiles"
+                   class="form-control"
+                   name="imageFiles"
+                 value="@Model.Image"
+                   />
+        </div>
+
+
+        @*<div class="col-md-6">
+        <label for="CategoryID">Category ID</label>
+        <select class="form-control"
+                id="CategoryID"
+                name="CategoryID">
+            @foreach (var item in ViewBag.CategoryID)
+            {
+                if (item.CategoryID == Model.CategoryID)
+                {
+                    <option value="@item.CategoryID" selected>
+                        @item.CategoryName
+                    </option>
+                }
+                else
+                {
+                    <option value="@item.CategoryID">
+                        @item.CategoryName
+                    </option>
+                }
+            }*@
+        
+    </div>
+
+      
+    
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/admin/product" class="btn btn-danger">Cancel</a>
+</form>
+
+
+

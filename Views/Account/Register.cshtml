@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Register";
+
+    <link rel="stylesheet" href="~/Content/Css/Account.css" />
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "formregis" }))
+{
+    @Html.AntiForgeryToken()
+    <p class="title">Welcome to</p>
+    <input type="text" class="input" placeholder="Name" name="Name">
+    <input type="text" class="input" placeholder="Address" name="Address">
+    <input type="date" class="input" placeholder="Birthday" name="Birthday">
+    <p>
+        <input type="radio" class="input" value="Female" placeholder="Gender" name="Gender">
+        <input type="radio" class="input" value="Male" placeholder="Gender" name="Gender">
+
+    </p>
+
+    <input type="text" class="input" placeholder="Phone" name="Phone">
+    <input type="text" class="input" placeholder="Username" name="Username">
+    <input type="text" class="input" placeholder="Password" name="Password">
+
+    <button class="form-btn">Log in</button>
+}

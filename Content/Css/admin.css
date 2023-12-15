@@ -1,0 +1,120 @@
+﻿.dark{
+    background-color: black;
+    color: #fff;
+}
+.dark .menunavbar{
+    color: #fff;
+    background-color: black;
+
+}
+    .dark .itemadmin p {
+        color: #fff;
+    }
+    .dark .itemadmin:hover p{
+        color: black;
+        
+    }
+.contentad {
+    background-color: #fff;
+    width: 100%;
+}
+.navbaradmin {
+    border-bottom: 2px solid #e5dfdf;
+    height: 60px;
+    width: 100%;
+    
+}
+.inforadmin {
+    float: inline-end;
+    display: flex
+}
+
+
+.dropdown-content {
+ right: 25px;
+ display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+       
+    }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.hoverad:hover .dropdown-content {
+    display: block;
+}
+.inforadmin img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  
+    margin: 10px;
+}
+.inforadmin p {
+    display: inline-block;
+    margin: 15px;
+}
+.menunavbar {
+    border-right: 2px solid #e5dfdf;
+    height: 600px;
+    width: 20%;
+    background-color: #fff;
+    justify-content: center;
+    justify-items: center;
+}
+.itemadmin {
+    display: flex;
+    color: black;
+
+}
+.itemadmin:hover {
+    background-color: aliceblue;
+   
+}
+.itemadmin:hover{
+    text-decoration: none;
+}
+.itemadmin i{
+    margin-left: 50px;
+    margin-top: 40px;
+
+}
+    .itemadmin p {
+        margin-left: 20px;
+        margin-top: 36px;
+    }
+.logoad{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+   position: relative;
+   left: 10px;
+    margin-top: 3px;
+    
+}
+.logoadminlayout{
+ float: left;
+ display: flex;
+
+}
+.logoadminlayout p{
+font-family: cursive;
+position: relative;
+left: 20px;
+margin-top: 16px;
+}
+
+#switch-mode {
+    cursor: pointer;
+}

@@ -1,0 +1,77 @@
+﻿@model WebApplication2.Models.Customer
+@{
+    ViewBag.Title = "EditCustomer";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+Ư
+
+<h2>Edit</h2>
+
+<form action="/Admin/Customer/EditCustomer/@Model.ID_customer" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="ID_customer" value="@Model.ID_customer" />
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Product Name">Customer name</label>
+            <input type="text"
+                   class="form-control"
+                   id="ProductName"
+                   name="Name"
+                   placeholder="Customer Name"
+                   value="@Model.Name" />
+        </div>
+        <div class="col-md-6">
+            <label for="Price">Address</label>
+            <input type="text"
+                   class="form-control"
+                   id="Address"
+                   name="Address"
+                   placeholder="Price"
+                   value="@Model.Address" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Birthday</label>
+            <input type="date"
+                   class="form-control"
+                   name="Birthday"
+                   placeholder="DateofPurchase"
+                   value="@Model.Birthday" />
+        </div>
+     
+        <div class="col-md-6">
+            <label for="DateofPurchase">Phone</label>
+            <input type="text"
+                   class="form-control"
+                   id="DateofPurchase"
+                   name="Phone"
+                   placeholder="Phone"
+                   value="@Model.Phone" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Gmail</label>
+            <input type="email"
+                   class="form-control"
+                   name="Gmail"
+                   value="@Model.Gmail" />
+        </div>
+        <div class="col-md-6">
+            <label for="DateofPurchase">Username :</label>
+            <input type="text"
+                   class="form-control"
+                   id="DateofPurchase"
+                   name="Username"
+                   placeholder="DateofPurchase"
+                   value="@Model.Username" />
+        </div>
+
+
+      
+
+
+
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/admin/customer" class="btn btn-danger">Cancel</a>
+</form>
+
+
+
